@@ -26,7 +26,6 @@ define(["jquery", "common"], function ($, common) {
         ANIMATION_END_NAME = "animationend";
     }
 
-
     //catalog
     function Item(data) {
         this.id = data["id"];
@@ -49,7 +48,7 @@ define(["jquery", "common"], function ($, common) {
             self.element.onclick = function(e) {
                 e = e || window.event;
                 pageController.change(self.firstPage, "goto");
-                e.stopPropagation();
+                common.stopDefault(e);
             };
         }
     };
@@ -105,6 +104,9 @@ define(["jquery", "common"], function ($, common) {
     }
 
     var vernier = document.querySelector(".qzy-catalog-vernier");
+    var sound_nav = document.querySelector("#nav-sound");
+
+    sound_nav.load();
 
     var catController = {
         curr: {},
@@ -114,6 +116,16 @@ define(["jquery", "common"], function ($, common) {
                 catData = data;
             }
             container = document.querySelector("#"+id);
+            container.onclick = function() {
+                if(sound_nav.duration == Infinity) {
+                    sound_nav.load();
+                }
+                else {
+                    sound_nav.pause();
+                    sound_nav.currentTime = 0;
+                    sound_nav.play();
+                }
+            };
             createItems();
             drawCat(this.callback);
             return items;
