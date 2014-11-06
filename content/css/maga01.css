@@ -26,7 +26,11 @@
   height: calc(50% - 320px); }
   .qzy-footer .qzy-info {
     margin: 0 auto 0 auto;
-    width: 1000px; }
+    width: 1000px;
+    text-align: right;
+    font-size: 0.75em;
+    color: #4c4b48;
+    text-shadow: 1px 1px 2px #999; }
 
 .qzy-main {
   padding: 20px 0;
@@ -105,10 +109,10 @@
     position: absolute;
     top: -8px;
     left: 0;
-    background: url("../images/lotus.png") right no-repeat;
+    background: url("../images/lotus.gif") right no-repeat;
     width: 100%;
     height: 40px;
-    transition: top .3s linear; }
+    transition: top .5s ease-in-out; }
   .qzy-catalog .qzy-tree-sub {
     margin-left: 20px;
     font-size: 12px; }
