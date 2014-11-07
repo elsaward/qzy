@@ -119,8 +119,6 @@ define(["jquery", "common"], function ($, common) {
     var vernier = document.querySelector(".qzy-catalog-vernier");
     var sound_nav = document.querySelector("#nav-sound");
 
-    //sound_nav.load();
-
     var catController = {
         curr: {},
         build: function(id, data, callback) {
@@ -313,7 +311,7 @@ define(["jquery", "common"], function ($, common) {
             var option = {
                 url: "data/catList"+id+".json",
                 success: function(res) {
-                    sound_nav.load();
+                    setTimeout(function(){sound_nav.load();}, 1000);
                     if(typeof res == "string") res = $.parseJSON(res);
                     catController.build("catList", res);
                     pageController.init();
