@@ -11,7 +11,23 @@
 <div class="qzy-wrapper">
     <div class="qzy-scroll">
         <div class="qzy-header">
-            <div class="qzy-nav">这里放期刊导航（这部分具体是啥内容？）</div>
+            <div class="qzy-nav">
+                <div class="qzy-nav-small">
+                    <div class="qzy-nav-switcher">打开菜单</div>
+                    <ul class="qzy-top-menu-small">
+                        <li>menu1</li>
+                        <li>menu2</li>
+                        <li>menu3</li>
+                        <li>menu4</li>
+                    </ul>
+                </div>
+                <ul class="qzy-top-menu">
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>
+            </div>
         </div>
         <div class="qzy-main">
             <div class="qzy-magazine cf">
@@ -33,12 +49,15 @@
         </div>
         <div class="qzy-footer">
             <div class="qzy-info">使用「←」「→」键也可以翻页哦~</div>
-            <audio id="nav-sound" preload="auto">
-                <source src="content/sound/drop.ogg">
-                <source src="content/sound/drop.mp3">
-            </audio>
+            <audio id="nav-sound" preload="auto"></audio>
         </div>
     </div>
+</div>
+<div class="qzy-download-tip">
+    最佳浏览体验：1280x800以上，ie9以上；<br>
+    最低窗口大小：1200x600以上；<br>
+    您的窗口/浏览器无法支持在线版浏览，请将窗口最大化<br>
+    或点击下载电子版：<a id="download" href="#">点击我</a>
 </div>
 <script data-main="scripts/catList" src="scripts/require.js"></script>
 </body>

@@ -26,6 +26,19 @@ define(["jquery", "common"], function ($, common) {
         ANIMATION_END_NAME = "animationend";
     }
 
+    //topMenu
+    var switcher = document.querySelector(".qzy-nav-switcher");
+    var topMenu = document.querySelector(".qzy-top-menu-small");
+    switcher.onclick = function() {
+        if(topMenu.style.display == "block") {
+            topMenu.style.display = "none";
+            switcher.innerHTML = "打开菜单";
+        } else {
+            topMenu.style.display = "block";
+            switcher.innerHTML = "关闭菜单";
+        }
+    };
+
     //catalog
     function Item(data) {
         this.id = data["id"];
@@ -106,7 +119,7 @@ define(["jquery", "common"], function ($, common) {
     var vernier = document.querySelector(".qzy-catalog-vernier");
     var sound_nav = document.querySelector("#nav-sound");
 
-    sound_nav.load();
+    //sound_nav.load();
 
     var catController = {
         curr: {},
@@ -292,6 +305,11 @@ define(["jquery", "common"], function ($, common) {
         id: null,
         init: function(id) {
             this.id = id;
+            var FILE_EXT;
+            if(sound_nav.canPlayType("audio/ogg") == "probably") FILE_EXT = ".ogg";
+            else FILE_EXT = ".mp3";
+            sound_nav.src = "content/sound/sound" + id + FILE_EXT;
+            sound_nav.load();
             var option = {
                 url: "data/catList"+id+".json",
                 success: function(res) {

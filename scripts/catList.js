@@ -3,5 +3,6 @@ require.config({
 });
 
 require(['jquery', 'common', 'magazine'], function($, common, magazine) {
-    setTimeout(function() {magazine(1);}, 1000);
+    var id = common.getUrlParameter("id");
+    setTimeout(function() {magazine(id || 1);}, 500);
 });
