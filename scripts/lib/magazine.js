@@ -306,13 +306,14 @@ define(["jquery", "common"], function ($, common) {
         init: function(id) {
             this.id = id;
             var FILE_EXT;
-            if(sound_nav.canPlayType("audio/ogg") == "probably") FILE_EXT = ".ogg";
+            if(sound_nav.canPlayType("audio/ogg") != "") FILE_EXT = ".ogg";
             else FILE_EXT = ".mp3";
             sound_nav.src = "content/sound/sound" + id + FILE_EXT;
             sound_nav.load();
             var option = {
                 url: "data/catList"+id+".json",
                 success: function(res) {
+                    sound_nav.load();
                     if(typeof res == "string") res = $.parseJSON(res);
                     catController.build("catList", res);
                     pageController.init();

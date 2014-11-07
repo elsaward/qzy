@@ -166,7 +166,7 @@
     background: url("../images/lotus.gif") right no-repeat;
     width: 100%;
     height: 40px;
-    transition: top .5s ease-in-out; }
+    transition: top .5s linear; }
   .qzy-catalog .qzy-tree-sub {
     margin-left: 20px;
     font-size: 12px; }
