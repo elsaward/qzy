@@ -186,6 +186,7 @@
     position: relative;
     width: 160px;
     height: 588px;
+    background: url("../images/lotus2.gif") left bottom no-repeat;
   }
   a {
     display: block;
@@ -203,7 +204,7 @@
     position: absolute;
     top: -8px;
     left: 0;
-    background: url("../images/lotus.gif") right no-repeat;
+    background: url("../images/lotus1.gif") right no-repeat;
     width: 100%;
     height: 40px;
     transition: top .5s linear;
@@ -224,17 +225,17 @@
   margin-left: 18px;
   width: 800px;
   height: 600px;
+  @include perspective(2000px);
   >div {
     position: absolute;
     width: inherit;
     height: inherit;
   }
   .qzy-page {
-    //border-radius: 10px;
+    width: 800px;
+    height: 600px;
     background: rgba(255,255,255,.6) url("../images/loading.png") center no-repeat;
-    >* {
-      //border-radius: 10px;
-    }
+    @include transform-origin(0 50%);
   }
   .page-on {
     z-index: 97;
@@ -245,11 +246,11 @@
   }
   .page-out {
     z-index: 99;
-    @include animation(page-out 0.5s linear);
+    @include animation(page-out 0.7s linear);
   }
   .page-in {
     z-index: 99;
-    @include animation(page-in 0.5s linear);
+    @include animation(page-in 0.7s linear);
   }
   .page-out-right {
     z-index: 99;
@@ -276,7 +277,6 @@
     text-align: center;
     color: #333;
     border: 1px solid #d2b5a6;
-    //border-radius: 5px;
     background: rgba(255,255,255,.4);
   }
 }
@@ -303,7 +303,7 @@
 }
 
 @include keyframes(page-out) {
-  0% {
+  /*0% {
     top: 0;
     left: 0;
   }
@@ -321,11 +321,22 @@
     top: -60px;
     left: -800px;
     opacity: 0;
+  }*/
+  0% {
+    @include rotateY(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    @include rotateY(-180deg);
+    opacity: 0;
   }
 }
 
 @include keyframes(page-in) {
-  0% {
+  /*0% {
     top: -60px;
     left: -800px;
     opacity: 0;
@@ -343,6 +354,17 @@
   100% {
     top: 0;
     left: 0;
+    opacity: 1;
+  }*/
+  0% {
+    @include rotateY(-180deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    @include rotateY(0);
     opacity: 1;
   }
 }
