@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>寻宇纪管理后台</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="scripts/holder.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <ul class="nav nav-pills pull-right" role="tablist">
+            <li role="presentation"><a href="#">登出</a></li>
+            <li role="presentation" class="active"><a href="maga.html">期刊管理</a></li>
+            <li role="presentation"><a href="#">热帖管理</a></li>
+        </ul>
+        <h2>寻宇纪管理后台<small>一切为了政委</small></h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="thumbnail">
+                <img data-src="holder.js/400x600" alt="">
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <form role="form">
+                <div class="form-group">
+                    <label for="pic">图片文件</label>
+                    <input type="text" class="form-control" id="pic" placeholder="pic">
+                </div>
+                <div class="form-group">
+                    <label for="url">外部链接</label>
+                    <input type="text" class="form-control" id="url" placeholder="url">
+                </div>
+                <div class="form-group">
+                    <label for="article">文章内容</label>
+                    <textarea id="article" class="form-control" rows="18"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">确定</button>
+                <a href="maga_edit.html" class="btn btn-default">取消编辑</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

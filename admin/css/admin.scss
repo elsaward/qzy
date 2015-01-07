@@ -1,0 +1,42 @@
+@charset "utf-8";
+@import "mixin";
+
+h2 {
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "微软雅黑";
+  small {
+    margin-left: 20px;
+    font-size: 14px;
+  }
+}
+
+.maga-page {
+  .thumbnail {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.page-focus {
+  .thumbnail {
+    border: 1px solid #c00;
+    @include shadow(0 0 3px #c00);
+  }
+}
+
+.mask-on {
+  .page-mask {
+    display: block;
+    padding-top: 50%;
+    text-align: center;
+  }
+}
+
+.page-mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, .7);
+}

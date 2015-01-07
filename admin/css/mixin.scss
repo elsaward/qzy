@@ -1,0 +1,119 @@
+@charset "utf-8";
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//3D透视
+@mixin perspective($distance) {
+  perspective: $distance;
+  -webkit-perspective: $distance;
+  -moz-perspective: $distance;
+  -ms-perspective: $distance;
+}
+
+@mixin perspective-origin($origin...) {
+  perspective-origin: $origin;
+  -webkit-perspective-origin: $origin;
+  -moz-perspective-origin: $origin;
+  -ms-perspective-origin: $origin;
+}
+
+@mixin preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+}
+
+@mixin transform-origin($origin...) {
+  transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+}
+
+@mixin rotate($deg...) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  -ms-transform: rotate($deg);
+  -o-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+@mixin rotateY($deg...) {
+  -webkit-transform: rotateY($deg);
+  -moz-transform: rotateY($deg);
+  -ms-transform: rotateY($deg);
+  -o-transform: rotateY($deg);
+  transform: rotateY($deg);
+}
+
+@mixin content-box {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+@mixin bk-repeat-x($url, $h) {
+  height: $h;
+  background: url($url) repeat-x center;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin animation($animation...) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+
+@mixin keyframes($name){
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin btn-img($url, $w, $h) {
+  width: $w;
+  height: $h;
+  border: 0;
+  background: url($url) center no-repeat;
+}
+
+@mixin shadow($shadow...) {
+  -moz-box-shadow: $shadow;
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin base-button($bcolor, $radius, $scolor, $ecolor, $bgcolor, $ptb, $plr, $shadow) {
+  display: inline-block;
+  padding: $ptb $plr;
+  border: 1px solid $bcolor;
+  border-radius: $radius;
+  background-color: $bgcolor;
+  background-image: -moz-linear-gradient( 90deg, $ecolor 0%, $scolor 100%);
+  background-image: -webkit-linear-gradient( 90deg, $ecolor 0%, $scolor 100%);
+  background-image: -ms-linear-gradient( 90deg, $ecolor 0%, $scolor 100%);
+  @include shadow(0px 1px 0px $shadow);
+}
