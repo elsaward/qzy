@@ -2,5 +2,9 @@
     "id": 2,
     "catalog": 6,
     "magazine": 1,
-    "data": "<img src='data/07_02.jpg' width='800' heigth='600'>"
+    "data": "data/07-02_01.jpg",
+    "article": "",
+    "videoLink": "",
+    "prePage": "1",
+    "nextPage": "3"
 }

@@ -1,6 +1,10 @@
 {
     "id": 4,
-    "catalog": 6,
+    "catalog": 7,
     "magazine": 1,
-    "data": "<img src='data/07-03.jpg' width='800' heigth='600'>"
+    "data": "data/07-10.jpg",
+    "article": "",
+    "videoLink": "",
+    "prePage": "3",
+    "nextPage": "5"
 }

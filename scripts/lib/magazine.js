@@ -45,7 +45,7 @@ define(["jquery", "common"], function ($, common) {
         this.name = data["name"];
         this.url = data["url"];
         this.parent = data["parent"];
-        this.order = data["order"];
+        this.order = data["suborder"];
         this.firstPage = data["firstPage"];
         this.element = document.createElement("a");
         this.subElement = document.createElement("div");
@@ -166,40 +166,43 @@ define(["jquery", "common"], function ($, common) {
         e = e || window.event;
         var key = e.keyCode || e.which;
         if(key == 37) {
-            pageController.prev();
+            pageController.prev(prevBtn.data("page"));
         } else if(key == 39) {
-            pageController.next();
+            pageController.next(nextBtn.data("page"));
         }
     });
 
     prevBtn.on("click", function(e) {
-        pageController.prev();
+        pageController.prev($(this).data("page"));
         common.stopDefault(e);
     });
 
     nextBtn.on("click", function(e) {
-        pageController.next();
+        pageController.next($(this).data("page"));
         common.stopDefault(e);
     });
 
+    var pageTpl = $("#pageTpl").html();
+
     var pageController = {
-        curr: null,
-        max: null,
+        //curr: 1,
+        //max: 10,
         inPageIn: false,
         inPageOut: false,
         init: function() {
-            this.curr = 1;
             prevBtn.hide();
             var option = {
                 url: "data/page"+1+".json",
                 data: {
-                    page: 1,
                     magazineId: magazineController.id
                 },
                 success: function(res){
                     if(typeof res == "string") res = $.parseJSON(res);
-                    pageController.max = 10;
-                    contentContainer.children().eq(0).append(res["data"]).addClass("page-on");
+                    //pageController.max = 10;
+                    pageController.curr = res["id"];
+                    contentContainer.children().eq(0).append(getData(res, pageTpl)).addClass("page-on");
+                    prevBtn.data("page", res["prePage"]);
+                    nextBtn.data("page", res["nextPage"]);
                 }
             };
             $.ajax(option);
@@ -245,11 +248,10 @@ define(["jquery", "common"], function ($, common) {
         change: function(page, type) {
             if(this.inPageIn || this.inPageOut) return false;
             if(!page) return false;
-            if(this.curr == page && type == "goto") return false;
+            if(this.curr == page) return false;
             if(page > this.max || page < 1) page = 1;
             this.curr = page;
-            this.curr == 1 ? prevBtn.hide() : prevBtn.show();
-            this.curr == this.max ? nextBtn.hide() : nextBtn.show();
+
             currPageContainer = $(".page-on");
             nextPageContainer = currPageContainer.siblings(".qzy-page");
             this.pageOut(type);
@@ -257,37 +259,32 @@ define(["jquery", "common"], function ($, common) {
             var option = {
                 url: "data/page"+page+".json",
                 data: {
-                    page: page,
-                    magazineId: magazineController.id
+                    page: page
                 },
                 success: function(res) {
                     if(typeof res == "string") res = $.parseJSON(res);
                     var cat = res["catalog"];
                     $.clearDomElement(nextPageContainer[0]);
-                    nextPageContainer.append(res["data"]);
+                    nextPageContainer.append(getData(res, pageTpl));
+                    prevBtn.data("page", res["prePage"]);
+                    nextBtn.data("page", res["nextPage"]);
+                    res["prePage"] == 0 ? prevBtn.hide() : prevBtn.show();
+                    res["nextPage"] == 0 ? nextBtn.hide() : nextBtn.show();
                     if(cat == catController.curr.id) return false;
                     else catController.change(cat);
                 }
             };
             $.ajax(option);
         },
-        prev: function() {
+        prev: function(page) {
             if(this.inPageIn || this.inPageOut) return false;
-            this.curr--;
-            if(this.curr < 1) {
-                this.curr = 1;
-                return false;
-            }
-            this.change(this.curr, "prev");
+            if(page === "0" || page === undefined) return false;
+            this.change(page, "prev");
         },
-        next: function() {
+        next: function(page) {
             if(this.inPageIn || this.inPageOut) return false;
-            this.curr++;
-            if(this.curr > this.max) {
-                this.curr = this.max;
-                return false;
-            }
-            this.change(this.curr, "next");
+            if(page === "0" || page === undefined) return false;
+            this.change(page, "next");
         }
     };
 
@@ -320,6 +317,15 @@ define(["jquery", "common"], function ($, common) {
             $.ajax(option);
         }
     };
+
+    function getData(item, htmlCode) {
+        htmlCode = htmlCode.replace(/{{([\s\S]+?)}}/g, function(match, code) {
+            var codeArr = code.split("|");
+            if(codeArr.length == 1) return item[""+code+""] == undefined ? "" : item[""+code+""];
+            else return item[""+codeArr[0]+""] || codeArr[1];
+        });
+        return htmlCode;
+    }
 
     return magazineController.init;
 });

@@ -30,13 +30,14 @@
             </div>
             <button type="submit" class="btn btn-primary">修改</button>
         </form>
-        <button type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+        <button type="button" class="btn btn-success navbar-btn">新建一页</button>
+        <a href="maga.html" class="btn btn-default navbar-btn">返回列表</a>
     </nav>
     <div class="row">
         <div class="col-sm-3 col-md-2 maga-page">
             <div class="thumbnail">
                 <div class="page-mask">
-                    <button class="btn btn-primary">插入此页前</button>
+                    <button class="btn btn-primary page-insert">插入此页前</button>
                 </div>
                 <img data-src="holder.js/133x200" alt="">
                 <div class="caption">
@@ -49,7 +50,7 @@
         <div class="col-sm-3 col-md-2 maga-page">
             <div class="thumbnail">
                 <div class="page-mask">
-                    <button class="btn btn-primary">插入此页前</button>
+                    <button class="btn btn-primary page-insert">插入此页前</button>
                 </div>
                 <img data-src="holder.js/133x200" alt="">
                 <div class="caption">
@@ -62,7 +63,7 @@
         <div class="col-sm-3 col-md-2 maga-page">
             <div class="thumbnail">
                 <div class="page-mask">
-                    <button class="btn btn-primary">插入此页前</button>
+                    <button class="btn btn-primary page-insert">插入此页前</button>
                 </div>
                 <img data-src="holder.js/133x200" alt="">
                 <div class="caption">
@@ -75,7 +76,7 @@
         <div class="col-sm-3 col-md-2 maga-page">
             <div class="thumbnail">
                 <div class="page-mask">
-                    <button class="btn btn-primary">插入此页前</button>
+                    <button class="btn btn-primary page-insert">插入此页前</button>
                 </div>
                 <img data-src="holder.js/133x200" alt="">
                 <div class="caption">
@@ -88,7 +89,7 @@
         <div class="col-sm-3 col-md-2 maga-page">
             <div class="thumbnail">
                 <div class="page-mask">
-                    <button class="btn btn-primary">插入此页前</button>
+                    <button class="btn btn-primary page-insert">插入此页前</button>
                 </div>
                 <img data-src="holder.js/133x200" alt="">
                 <div class="caption">
@@ -101,7 +102,7 @@
         <div class="col-sm-3 col-md-2 maga-page">
             <div class="thumbnail">
                 <div class="page-mask">
-                    <button class="btn btn-primary">插入此页前</button>
+                    <button class="btn btn-primary page-insert">插入此页前</button>
                 </div>
                 <img data-src="holder.js/133x200" alt="">
                 <div class="caption">
@@ -114,7 +115,7 @@
         <div class="col-sm-3 col-md-2 maga-page">
             <div class="thumbnail">
                 <div class="page-mask">
-                    <button class="btn btn-primary">插入此页前</button>
+                    <button class="btn btn-primary page-insert">插入此页前</button>
                 </div>
                 <img data-src="holder.js/133x200" alt="">
                 <div class="caption">
@@ -128,12 +129,25 @@
 </div>
 <script>
     $(function() {
+        var currEle = null;
+
         $(".maga-page").on("click", function(e) {
             var target = $(e.target);
             if(target.hasClass("glyphicon-move")) target = target.parent();
             if(target.hasClass("btn-warning")) {
-                $(this).toggleClass("page-focus").siblings().toggleClass("mask-on");
+                if($(this).hasClass("page-focus")) {
+                    $(this).removeClass("page-focus").siblings().removeClass("mask-on");
+                    currEle = null;
+                } else {
+                    $(this).addClass("page-focus").siblings().addClass("mask-on");
+                    currEle = $(this);
+                }
                 e.preventDefault();
+            }
+            if(currEle && target.hasClass("page-insert")) {
+                $(this).before(currEle);
+                currEle.removeClass("page-focus").siblings().removeClass("mask-on");
+                currEle = null;
             }
         });
     });
