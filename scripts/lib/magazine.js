@@ -182,7 +182,10 @@ define(["jquery", "common"], function ($, common) {
         common.stopDefault(e);
     });
 
-    var pageTpl = $("#pageTpl").html();
+    var imgTpl = $("#imgTpl").html();
+    var fileTpl = $("#fileTpl").html();
+    var linkTpl = $("#linkTpl").html();
+    var pageTpl = imgTpl;
 
     var pageController = {
         curr: 0,
@@ -198,6 +201,11 @@ define(["jquery", "common"], function ($, common) {
                 success: function(res){
                     if(typeof res == "string") res = $.parseJSON(res);
                     pageController.curr = res["id"];
+                    if(res["article"] !== "") pageTpl = fileTpl;
+                    if(res["videoLink"] !== "") {
+                        pageTpl = linkTpl;
+                        res = getLinkPosition(res);
+                    }
                     contentContainer.children().eq(0).append(getData(res, pageTpl)).addClass("page-on");
                     prevBtn.data("page", res["prePage"]);
                     nextBtn.data("page", res["nextPage"]);
@@ -259,9 +267,16 @@ define(["jquery", "common"], function ($, common) {
                     page: page
                 },
                 success: function(res) {
+                    pageTpl = imgTpl;
                     if(typeof res == "string") res = $.parseJSON(res);
                     var cat = res["catalog"];
+
                     $.clearDomElement(nextPageContainer[0]);
+                    if(res["article"] !== "") pageTpl = fileTpl;
+                    if(res["videoLink"] !== "") {
+                        pageTpl = linkTpl;
+                        res = getLinkPosition(res);
+                    }
                     nextPageContainer.append(getData(res, pageTpl));
                     prevBtn.data("page", res["prePage"]);
                     nextBtn.data("page", res["nextPage"]);
@@ -314,6 +329,16 @@ define(["jquery", "common"], function ($, common) {
             $.ajax(option);
         }
     };
+
+    function getLinkPosition(data) {
+        var pos;
+        if(data["videoLink"]) {
+            pos = data["videoLink"].split("|");
+            data["top"] = pos[1] || 0;
+            data["left"] = pos[2] || 0;
+        }
+        return data;
+    }
 
     function getData(item, htmlCode) {
         htmlCode = htmlCode.replace(/{{([\s\S]+?)}}/g, function(match, code) {

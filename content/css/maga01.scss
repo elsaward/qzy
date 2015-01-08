@@ -237,6 +237,29 @@
     background: rgba(255,255,255,.6) url("../images/loading.png") center no-repeat;
     @include transform-origin(0 50%);
   }
+  .qzy-article {
+    position: absolute;
+    padding: 20px;
+    width: 760px;
+    height: 560px;
+    text-shadow: 0 0 5px #fff;
+    background: rgba(255,255,255,.8);
+    overflow: auto;
+    h2 {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    p + p {
+      margin-top: 5px;
+    }
+  }
+  .qzy-video {
+    position: absolute;
+    padding: 5px 15px;
+    color: #fff;
+    background: #c00;
+  }
   .page-on {
     z-index: 97;
     left: 0;

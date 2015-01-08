@@ -198,6 +198,25 @@
     -webkit-transform-origin: 0 50%;
     -moz-transform-origin: 0 50%;
     -o-transform-origin: 0 50%; }
+  .qzy-content .qzy-article {
+    position: absolute;
+    padding: 20px;
+    width: 760px;
+    height: 560px;
+    text-shadow: 0 0 5px #fff;
+    background: rgba(255, 255, 255, 0.8);
+    overflow: auto; }
+    .qzy-content .qzy-article h2 {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold; }
+    .qzy-content .qzy-article p + p {
+      margin-top: 5px; }
+  .qzy-content .qzy-video {
+    position: absolute;
+    padding: 5px 15px;
+    color: #fff;
+    background: #c00; }
   .qzy-content .page-on {
     z-index: 97;
     left: 0; }
@@ -252,76 +271,61 @@
 @-webkit-keyframes open-magazine {
   0% {
     width: 0; }
-
   100% {
     width: 100%; } }
 @-moz-keyframes open-magazine {
   0% {
     width: 0; }
-
   100% {
     width: 100%; } }
 @-ms-keyframes open-magazine {
   0% {
     width: 0; }
-
   100% {
     width: 100%; } }
 @-o-keyframes open-magazine {
   0% {
     width: 0; }
-
   100% {
     width: 100%; } }
 @keyframes open-magazine {
   0% {
     width: 0; }
-
   100% {
     width: 100%; } }
 @-webkit-keyframes magazine-in {
   0% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-moz-keyframes magazine-in {
   0% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-ms-keyframes magazine-in {
   0% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-o-keyframes magazine-in {
   0% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @keyframes magazine-in {
   0% {
     opacity: 0; }
-
   60% {
     opacity: 0; }
-
   100% {
     opacity: 1; } }
 @-webkit-keyframes page-out {
@@ -351,10 +355,8 @@
     -o-transform: rotateY(0);
     transform: rotateY(0);
     opacity: 1; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
@@ -389,10 +391,8 @@
     -o-transform: rotateY(0);
     transform: rotateY(0);
     opacity: 1; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
@@ -427,10 +427,8 @@
     -o-transform: rotateY(0);
     transform: rotateY(0);
     opacity: 1; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
@@ -465,10 +463,8 @@
     -o-transform: rotateY(0);
     transform: rotateY(0);
     opacity: 1; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
@@ -503,10 +499,8 @@
     -o-transform: rotateY(0);
     transform: rotateY(0);
     opacity: 1; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
@@ -542,10 +536,8 @@
     -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(0);
     -moz-transform: rotateY(0);
@@ -581,10 +573,8 @@
     -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(0);
     -moz-transform: rotateY(0);
@@ -620,10 +610,8 @@
     -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(0);
     -moz-transform: rotateY(0);
@@ -659,10 +647,8 @@
     -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(0);
     -moz-transform: rotateY(0);
@@ -698,10 +684,8 @@
     -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     opacity: 0; }
-
   50% {
     opacity: 1; }
-
   100% {
     -webkit-transform: rotateY(0);
     -moz-transform: rotateY(0);
@@ -713,17 +697,14 @@
   0% {
     top: 0;
     right: 0; }
-
   25% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   100% {
     top: -60px;
     right: -800px;
@@ -732,17 +713,14 @@
   0% {
     top: 0;
     right: 0; }
-
   25% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   100% {
     top: -60px;
     right: -800px;
@@ -751,17 +729,14 @@
   0% {
     top: 0;
     right: 0; }
-
   25% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   100% {
     top: -60px;
     right: -800px;
@@ -770,17 +745,14 @@
   0% {
     top: 0;
     right: 0; }
-
   25% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   100% {
     top: -60px;
     right: -800px;
@@ -789,17 +761,14 @@
   0% {
     top: 0;
     right: 0; }
-
   25% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   100% {
     top: -60px;
     right: -800px;
@@ -809,17 +778,14 @@
     top: -60px;
     right: -800px;
     opacity: 0; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   75% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   100% {
     top: 0;
     right: 0;
@@ -829,17 +795,14 @@
     top: -60px;
     right: -800px;
     opacity: 0; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   75% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   100% {
     top: 0;
     right: 0;
@@ -849,17 +812,14 @@
     top: -60px;
     right: -800px;
     opacity: 0; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   75% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   100% {
     top: 0;
     right: 0;
@@ -869,17 +829,14 @@
     top: -60px;
     right: -800px;
     opacity: 0; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   75% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   100% {
     top: 0;
     right: 0;
@@ -889,18 +846,17 @@
     top: -60px;
     right: -800px;
     opacity: 0; }
-
   50% {
     top: -50px;
     right: -400px;
     opacity: .5; }
-
   75% {
     top: -20px;
     right: -100px;
     opacity: .8; }
-
   100% {
     top: 0;
     right: 0;
     opacity: 1; } }
+
+/*# sourceMappingURL=maga01.css.map */

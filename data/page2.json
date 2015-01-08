@@ -4,7 +4,7 @@
     "magazine": 1,
     "data": "data/07-02_01.jpg",
     "article": "",
-    "videoLink": "",
+    "videoLink": "http://baidu.com|30|250",
     "prePage": "1",
     "nextPage": "3"
 }

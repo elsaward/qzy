@@ -59,8 +59,16 @@
     您的窗口/浏览器无法支持在线版浏览，请将窗口最大化<br>
     或点击下载电子版：<a id="download" href="#">点击我</a>
 </div>
-<script id="pageTpl" type="text/html">
+<script id="imgTpl" type="text/html">
     <img src='{{data}}' width='800' heigth='600'>
+</script>
+<script id="fileTpl" type="text/html">
+    <div class="qzy-article">{{article}}</div>
+    <img src='{{data}}' width='800' heigth='600'>
+</script>
+<script id="linkTpl" type="text/html">
+    <img src='{{data}}' width='800' heigth='600'>
+    <a class="qzy-video" style="top: {{top}}px; left: {{left}}px" href="{{url}}">点击观看</a>
 </script>
 <script data-main="scripts/catList" src="scripts/require.js"></script>
 </body>
