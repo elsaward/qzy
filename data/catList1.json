@@ -3,7 +3,6 @@
     {"id":1,"name":"恭心纪","firstPage":"","parent":0,"order":1},
     {"id":2,"name":"乔少恭大揭秘","firstPage":"","parent":0,"order":2},
     {"id":3,"name":"影评区","firstPage":"","parent":0,"order":3},
-    {"id":4,"name":"图片区","firstPage":"","parent":0,"order":4},
     {"id":5,"name":"视频区","firstPage":"","parent":0,"order":5},
     {"id":6,"name":"少恭家族的崛起","firstPage":"2","parent":1,"order":1},
     {"id":7,"name":"手办追剧欢乐多","firstPage":"4","parent":1,"order":2},
@@ -21,9 +20,6 @@
     {"id":19,"name":"观恐怖游轮感少恭","firstPage":"","parent":3,"order":6},
     {"id":20,"name":"琴兽的魅力风暴","firstPage":"","parent":3,"order":7},
     {"id":21,"name":"千古艰难惟一死","firstPage":"","parent":3,"order":8},
-    {"id":22,"name":"精美P图区","firstPage":"","parent":4,"order":1},
-    {"id":23,"name":"漫画区","firstPage":"","parent":4,"order":2},
-    {"id":24,"name":"绘图区","firstPage":"","parent":4,"order":3},
     {"id":25,"name":"剧情重剪向","firstPage":"","parent":5,"order":1},
     {"id":26,"name":"个人纯颜向","firstPage":"","parent":5,"order":2},
     {"id":27,"name":"CP向","firstPage":"","parent":5,"order":3}

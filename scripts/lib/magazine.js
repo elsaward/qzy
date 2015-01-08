@@ -185,8 +185,7 @@ define(["jquery", "common"], function ($, common) {
     var pageTpl = $("#pageTpl").html();
 
     var pageController = {
-        //curr: 1,
-        //max: 10,
+        curr: 0,
         inPageIn: false,
         inPageOut: false,
         init: function() {
@@ -198,7 +197,6 @@ define(["jquery", "common"], function ($, common) {
                 },
                 success: function(res){
                     if(typeof res == "string") res = $.parseJSON(res);
-                    //pageController.max = 10;
                     pageController.curr = res["id"];
                     contentContainer.children().eq(0).append(getData(res, pageTpl)).addClass("page-on");
                     prevBtn.data("page", res["prePage"]);
@@ -249,7 +247,6 @@ define(["jquery", "common"], function ($, common) {
             if(this.inPageIn || this.inPageOut) return false;
             if(!page) return false;
             if(this.curr == page) return false;
-            if(page > this.max || page < 1) page = 1;
             this.curr = page;
 
             currPageContainer = $(".page-on");
@@ -297,9 +294,9 @@ define(["jquery", "common"], function ($, common) {
 
     //magazine
     var magazineController = {
-        id: null,
+        id: 1,
         init: function(id) {
-            this.id = id;
+            this.id = id || this.id;
             var FILE_EXT;
             if(sound_nav.canPlayType("audio/ogg") != "") FILE_EXT = ".ogg";
             else FILE_EXT = ".mp3";
