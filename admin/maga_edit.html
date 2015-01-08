@@ -19,109 +19,167 @@
         </ul>
         <h2>寻宇纪管理后台<small>写点啥呢</small></h2>
     </div>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-brand">修改期刊信息</div>
-        <form class="navbar-form navbar-left" role="form">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="标题">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="样式表">
-            </div>
-            <button type="submit" class="btn btn-primary">修改</button>
-        </form>
-        <button type="button" class="btn btn-success navbar-btn">新建一页</button>
-        <a href="maga.html" class="btn btn-default navbar-btn">返回列表</a>
-    </nav>
+    <div class="panel panel-info">
+        <div class="panel-heading">修改期刊信息</div>
+        <div class="panel-body">
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="标题" name="magName">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="样式表" name="magCss">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="链接" name="magLink">
+                </div>
+                <button type="submit" class="btn btn-primary">修改</button>
+                <a href="page_edit.html" type="button" class="btn btn-success navbar-btn">新建一页</a>
+                <a href="maga.html" class="btn btn-default navbar-btn">返回列表</a>
+            </form>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-sm-3 col-md-2 maga-page">
-            <div class="thumbnail">
-                <div class="page-mask">
-                    <button class="btn btn-primary page-insert">插入此页前</button>
-                </div>
-                <img data-src="holder.js/133x200" alt="">
-                <div class="caption">
-                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
-                </div>
+        <div class="col-md-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">目录<a href="cat_edit.html" class="btn btn-primary btn-xs pull-right">编辑</a></div>
+                <ul class="list-group cat-list">
+                    <li class="list-group-item">
+                        <a href="#">封面</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="#">恭心纪</a>
+                        <ul>
+                            <li><a href="#">少恭家族的崛起</a></li>
+                            <li><a href="#">手办追剧欢乐多</a></li>
+                            <li><a href="#">听政委谈少恭</a></li>
+                            <li><a href="#">我是广告小能手</a></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item"><a href="#">乔少恭大揭秘</a></li>
+                    <li class="list-group-item"><a href="#">影评区</a></li>
+                    <li class="list-group-item"><a href="#">视频区</a></li>
+                </ul>
             </div>
         </div>
-        <div class="col-sm-3 col-md-2 maga-page">
-            <div class="thumbnail">
-                <div class="page-mask">
-                    <button class="btn btn-primary page-insert">插入此页前</button>
+        <div class="col-md-10">
+            <div class="panel panel-info page-cat">
+                <div class="panel-heading">
+                    <div class="page-opr pull-right form-inline">
+                        转到：
+                        <select class="form-control input-sm">
+                            <option>封面</option>
+                            <option>恭心纪</option>
+                            <option>--少恭家族的崛起</option>
+                            <option>--手办追剧欢乐多</option>
+                            <option>--听政委谈少恭</option>
+                            <option>乔少恭大揭秘</option>
+                            <option>视频区</option>
+                        </select>
+                        <button class="btn btn-danger btn-sm">删除</button>
+                    </div>
+                    <input type="checkbox">手办追剧欢乐多
                 </div>
-                <img data-src="holder.js/133x200" alt="">
-                <div class="caption">
-                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 col-md-2 maga-page">
-            <div class="thumbnail">
-                <div class="page-mask">
-                    <button class="btn btn-primary page-insert">插入此页前</button>
-                </div>
-                <img data-src="holder.js/133x200" alt="">
-                <div class="caption">
-                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 col-md-2 maga-page">
-            <div class="thumbnail">
-                <div class="page-mask">
-                    <button class="btn btn-primary page-insert">插入此页前</button>
-                </div>
-                <img data-src="holder.js/133x200" alt="">
-                <div class="caption">
-                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 col-md-2 maga-page">
-            <div class="thumbnail">
-                <div class="page-mask">
-                    <button class="btn btn-primary page-insert">插入此页前</button>
-                </div>
-                <img data-src="holder.js/133x200" alt="">
-                <div class="caption">
-                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 col-md-2 maga-page">
-            <div class="thumbnail">
-                <div class="page-mask">
-                    <button class="btn btn-primary page-insert">插入此页前</button>
-                </div>
-                <img data-src="holder.js/133x200" alt="">
-                <div class="caption">
-                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 col-md-2 maga-page">
-            <div class="thumbnail">
-                <div class="page-mask">
-                    <button class="btn btn-primary page-insert">插入此页前</button>
-                </div>
-                <img data-src="holder.js/133x200" alt="">
-                <div class="caption">
-                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
-                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4 col-md-3 maga-page">
+                            <div class="thumbnail">
+                                <input class="page-chk" type="checkbox">
+                                <div class="page-mask">
+                                    <button class="btn btn-primary page-insert">插入此页前</button>
+                                </div>
+                                <img data-src="holder.js/133x200" alt="">
+                                <div class="caption">
+                                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-3 maga-page">
+                            <div class="thumbnail">
+                                <input class="page-chk" type="checkbox">
+                                <div class="page-mask">
+                                    <button class="btn btn-primary page-insert">插入此页前</button>
+                                </div>
+                                <img data-src="holder.js/133x200" alt="">
+                                <div class="caption">
+                                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-3 maga-page">
+                            <div class="thumbnail">
+                                <input class="page-chk" type="checkbox">
+                                <div class="page-mask">
+                                    <button class="btn btn-primary page-insert">插入此页前</button>
+                                </div>
+                                <img data-src="holder.js/133x200" alt="">
+                                <div class="caption">
+                                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-3 maga-page">
+                            <div class="thumbnail">
+                                <input class="page-chk" type="checkbox">
+                                <div class="page-mask">
+                                    <button class="btn btn-primary page-insert">插入此页前</button>
+                                </div>
+                                <img data-src="holder.js/133x200" alt="">
+                                <div class="caption">
+                                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-3 maga-page">
+                            <div class="thumbnail">
+                                <input class="page-chk" type="checkbox">
+                                <div class="page-mask">
+                                    <button class="btn btn-primary page-insert">插入此页前</button>
+                                </div>
+                                <img data-src="holder.js/133x200" alt="">
+                                <div class="caption">
+                                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-3 maga-page">
+                            <div class="thumbnail">
+                                <input class="page-chk" type="checkbox">
+                                <div class="page-mask">
+                                    <button class="btn btn-primary page-insert">插入此页前</button>
+                                </div>
+                                <img data-src="holder.js/133x200" alt="">
+                                <div class="caption">
+                                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-3 maga-page">
+                            <div class="thumbnail">
+                                <input class="page-chk" type="checkbox">
+                                <div class="page-mask">
+                                    <button class="btn btn-primary page-insert">插入此页前</button>
+                                </div>
+                                <img data-src="holder.js/133x200" alt="">
+                                <div class="caption">
+                                    <a href="page_edit.html" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a href="#" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                                    <a href="#" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-move"></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

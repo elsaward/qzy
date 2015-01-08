@@ -27,17 +27,35 @@
         </div>
         <div class="col-sm-12 col-md-6">
             <form role="form">
-                <div class="form-group">
-                    <label for="pic">图片文件</label>
-                    <input type="text" class="form-control" id="pic" placeholder="pic">
-                </div>
-                <div class="form-group">
-                    <label for="url">外部链接</label>
-                    <input type="text" class="form-control" id="url" placeholder="url">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="pic">图片文件</label>
+                            <input type="text" class="form-control" id="pic" placeholder="图片" name="data">
+                        </div>
+                        <div class="form-group">
+                            <label for="url">视频链接</label>
+                            <input type="text" class="form-control" id="url" placeholder="视频链接" name="videoLink">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="catalog">选择所属目录</label>
+                            <select id="catalog" size="10" class="form-control" name="catalog">
+                                <option>封面</option>
+                                <option>恭心纪</option>
+                                <option>---少恭家族的崛起</option>
+                                <option>---手办追剧欢乐多</option>
+                                <option>---听政委谈少恭</option>
+                                <option>乔少恭大揭秘</option>
+                                <option>影评区</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="article">文章内容</label>
-                    <textarea id="article" class="form-control" rows="18"></textarea>
+                    <textarea id="article" class="form-control" rows="18" name="article"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">确定</button>
                 <a href="maga_edit.html" class="btn btn-default">取消编辑</a>

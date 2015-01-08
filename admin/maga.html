@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/admin.css">
     <script src="scripts/holder.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
 </head>
 <body>
 <div class="container">
@@ -19,7 +21,7 @@
         <h2>寻宇纪管理后台<small>写点啥呢</small></h2>
     </div>
     <nav class="navbar" role="navigation">
-        <a href="#" class="btn btn-primary navbar-btn" role="button">新增期刊</a>
+        <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal">新增期刊</button>
     </nav>
     <div class="row">
         <div class="col-sm-6 col-md-4">
@@ -55,6 +57,42 @@
                         <a href="#" class="btn btn-danger" role="button">删除</a>
                         <a href="maga_edit.html" class="btn btn-default" role="button">编辑</a>
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">新增期刊</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label for="magName" class="col-sm-2 control-label">期刊标题</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="magName" placeholder="期刊标题" name="magName">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="magLink" class="col-sm-2 control-label">期刊链接</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="magLink" placeholder="期刊链接" name="magLink">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="magCss" class="col-sm-2 control-label">期刊样式</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="magCss" placeholder="期刊样式" name="magCss" value="maga01.css">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">确定</button>
                 </div>
             </div>
         </div>
