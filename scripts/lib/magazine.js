@@ -26,19 +26,6 @@ define(["jquery", "common"], function ($, common) {
         ANIMATION_END_NAME = "animationend";
     }
 
-    //topMenu
-    var switcher = document.querySelector(".qzy-nav-switcher");
-    var topMenu = document.querySelector(".qzy-top-menu-small");
-    switcher.onclick = function() {
-        if(topMenu.style.display == "block") {
-            topMenu.style.display = "none";
-            switcher.innerHTML = "打开菜单";
-        } else {
-            topMenu.style.display = "block";
-            switcher.innerHTML = "关闭菜单";
-        }
-    };
-
     //catalog
     function Item(data) {
         this.id = data["id"];

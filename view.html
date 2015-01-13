@@ -10,30 +10,14 @@
 <!-- 政委专用，椰子爱政委么么哒 -->
 <div class="qzy-wrapper">
     <div class="qzy-scroll">
-        <div class="qzy-header">
-            <div class="qzy-nav">
-                <div class="qzy-nav-small">
-                    <div class="qzy-nav-switcher">打开菜单</div>
-                    <ul class="qzy-top-menu-small">
-                        <li>menu1</li>
-                        <li>menu2</li>
-                        <li>menu3</li>
-                        <li>menu4</li>
-                    </ul>
-                </div>
-                <ul class="qzy-top-menu">
-                    <li>menu1</li>
-                    <li>menu2</li>
-                    <li>menu3</li>
-                    <li>menu4</li>
-                </ul>
-            </div>
-        </div>
         <div class="qzy-main">
-            <div class="qzy-magazine cf">
-                <div class="qzy-page-bar">
-                    <a href="#" data-page="0">上一页</a>
-                    <a href="#" data-page="0">下一页</a>
+            <div class="qzy-magazine">
+                <div class="qzy-maga-nav">
+                    <ul>
+                        <li>首页</li>
+                        <li>期刊列表</li>
+                        <li>本期下载</li>
+                    </ul>
                 </div>
                 <div class="qzy-catalog">
                     <div class="qzy-catalog-nav">
@@ -44,6 +28,11 @@
                 <div class="qzy-content">
                     <div class="qzy-page"></div>
                     <div class="qzy-page"></div>
+                    <div class="qzy-holder"><img src="data/test1.jpg" height="100%"></div>
+                    <div class="qzy-page-bar">
+                        <a href="#" data-page="0">上一页</a>
+                        <a href="#" data-page="0">下一页</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,22 +42,8 @@
         </div>
     </div>
 </div>
-<div class="qzy-download-tip">
-    最佳浏览体验：1280x800以上，ie9以上；<br>
-    最低窗口大小：1200x600以上；<br>
-    您的窗口/浏览器无法支持在线版浏览，请将窗口最大化<br>
-    或点击下载电子版：<a id="download" href="#">点击我</a>
-</div>
 <script id="imgTpl" type="text/html">
-    <img src='{{data}}' width='800' heigth='600'>
-</script>
-<script id="fileTpl" type="text/html">
-    <div class="qzy-article">{{article}}</div>
-    <img src='{{data}}' width='800' heigth='600'>
-</script>
-<script id="linkTpl" type="text/html">
-    <img src='{{data}}' width='800' heigth='600'>
-    <a class="qzy-video" style="top: {{top}}px; left: {{left}}px" href="{{url}}">点击观看（按钮可控制位置）</a>
+    <img src='{{data}}'>
 </script>
 <script data-main="scripts/catList" src="scripts/require.js"></script>
 </body>

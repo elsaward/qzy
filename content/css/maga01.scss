@@ -10,130 +10,21 @@
   right: 0;
 }
 
-.qzy-download-tip {
-  padding-top: 15%;
-  text-align: center;
-}
-
-/* header */
-.qzy-header {
-
-}
-
-.qzy-nav {
-  .qzy-nav-switcher {
-    cursor: pointer;
-  }
-  .qzy-top-menu-small {
-    display: none;
-  }
-  .qzy-top-menu {
-    position: absolute;
-    bottom: 10px;
-  }
-}
-
-/* footer */
-.qzy-footer {
-
-}
-
 .qzy-main {
-  background: url("../images/qc.jpg") center no-repeat;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 0;
+  right: 0;
 }
 
-@media only screen and (min-width: 1200px) and (min-height: 600px) {
-  .qzy-wrapper {
-    display: block;
-  }
-  .qzy-download-tip {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 1200px) , (max-height: 600px) {
-  .qzy-wrapper {
-    display: none;
-  }
-  .qzy-download-tip {
-    display: block;
-  }
-}
-
-@media only screen and (min-height: 700px) {
-  .qzy-header,
-  .qzy-footer{
-    position: relative;
-    height: -webkit-calc(50% - 320px);
-    height: -moz-calc(50% - 320px);
-    height: calc(50% - 320px);
-  }
-  .qzy-nav {
-    margin: 0 auto 0 auto;
-    width: 1000px;
-    .qzy-nav-small {
-      display: none;
-    }
-    li {
-      display: inline-block;
-    }
-  }
-  .qzy-info {
-    margin: 0 auto 0 auto;
-    width: 1000px;
-    text-align: right;
-    line-height: 30px;
-    font-size: 0.75em;
-    color: #4c4b48;
-    text-shadow: 1px 1px 2px #999;
-  }
-  .qzy-main {
-    padding: 20px 0;
-  }
-}
-
-@media only screen and (max-height: 700px) {
-  .qzy-header,
-  .qzy-footer{
-    position: relative;
-    height: -webkit-calc(50% - 310px);
-    height: -moz-calc(50% - 310px);
-    height: calc(50% - 310px);
-  }
-  .qzy-nav {
-    position: absolute;
-    top: 0;
-    left: 50px;
-    width: 100px;
-    .qzy-nav-small {
-      display: block;
-    }
-    .qzy-top-menu {
-      display: none;
-    }
-  }
-  .qzy-info {
-    position: absolute;
-    bottom: 150px;
-    right: -30px;
-    text-align: right;
-    font-size: 0.75em;
-    color: #4c4b48;
-    text-shadow: 1px 1px 2px #999;
-    @include rotate(90deg);
-  }
-}
-
-@media only screen and (max-height: 700px) and (min-height: 620px) {
-  .qzy-main {
-    padding: 10px 0;
-  }
-}
-
-@media only screen and (max-height: 620px) and (min-height: 600px) {
-  .qzy-main {
-    padding: 0;
-  }
+.qzy-info {
+  margin: 0 auto 0 auto;
+  width: 1000px;
+  text-align: right;
+  font-size: 0.75em;
+  color: #4c4b48;
+  text-shadow: 1px 1px 2px #999;
 }
 
 /* magazine */
@@ -169,28 +60,35 @@
 .qzy-magazine {
   position: relative;
   margin: 0 auto;
-  width: 1000px;
+  height: 100%;
+  text-align: center;
   @include animation(magazine-in 2s linear);
 }
 
+.qzy-maga-nav {
+  display: inline-block;
+  padding: 0 20px;
+}
+
 .qzy-catalog {
-  float: left;
-  padding: 5px 10px;
+  display: inline-block;
+  height: 100%;
+  text-align: left;
+  vertical-align: top;
   border: 1px solid #d2b5a6;
-  //border-radius: 10px;
-  background: rgba(255,255,255,.4);
-  overflow: hidden;
+  background: rgba(255,255,255,.4) url("../images/lotus2.gif") left bottom no-repeat;
+  overflow-y: auto;
+  overflow-x: hidden;
   font-family: "Microsoft Yahei";
-  font-size: 14px;
+  font-size: 16px;
   .qzy-catalog-nav {
     position: relative;
+    margin: 5px 10px;
     width: 160px;
-    height: 588px;
-    background: url("../images/lotus2.gif") left bottom no-repeat;
   }
   a {
     display: block;
-    line-height: 20px;
+    line-height: 26px;
     cursor: pointer;
     transition: color .2s linear;
     &:hover {
@@ -198,7 +96,7 @@
     }
   }
   #catList {
-    position: absolute;
+    position: relative;
   }
   .qzy-catalog-vernier {
     position: absolute;
@@ -211,7 +109,7 @@
   }
   .qzy-tree-sub {
     margin-left: 20px;
-    font-size: 12px;
+    font-size: 14px;
     a {
       color: #3a2909;
       text-shadow: 2px 2px 5px #ff9b49;
@@ -220,22 +118,24 @@
 }
 
 .qzy-content {
+  display: inline-block;
   position: relative;
-  float: left;
   margin-left: 18px;
-  width: 800px;
-  height: 600px;
+  height: 100%;
+  vertical-align: top;
   @include perspective(2000px);
-  >div {
-    position: absolute;
-    width: inherit;
-    height: inherit;
+  .qzy-holder {
+    height: 100%;
   }
   .qzy-page {
-    width: 800px;
-    height: 600px;
+    position: absolute;
+    height: 100%;
     background: rgba(255,255,255,.6) url("../images/loading.png") center no-repeat;
     @include transform-origin(0 50%);
+    img {
+      width: auto;
+      height: 100%;
+    }
   }
   .qzy-article {
     position: absolute;
@@ -326,25 +226,6 @@
 }
 
 @include keyframes(page-out) {
-  /*0% {
-    top: 0;
-    left: 0;
-  }
-  25% {
-    top: -20px;
-    left: -100px;
-    opacity: .8;
-  }
-  50% {
-    top: -50px;
-    left: -400px;
-    opacity: .5;
-  }
-  100% {
-    top: -60px;
-    left: -800px;
-    opacity: 0;
-  }*/
   0% {
     @include rotateY(0);
     opacity: 1;
@@ -359,26 +240,6 @@
 }
 
 @include keyframes(page-in) {
-  /*0% {
-    top: -60px;
-    left: -800px;
-    opacity: 0;
-  }
-  50% {
-    top: -50px;
-    left: -400px;
-    opacity: .5;
-  }
-  75% {
-    top: -20px;
-    left: -100px;
-    opacity: .8;
-  }
-  100% {
-    top: 0;
-    left: 0;
-    opacity: 1;
-  }*/
   0% {
     @include rotateY(-180deg);
     opacity: 0;
