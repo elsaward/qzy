@@ -15,11 +15,11 @@ $mainFontColor: #333;
 }
 
 body.maga {
-  background: #000;
+  background: #190704;
 }
 
 a {
-  color: $mainColor;
+  color: #fff;
 }
 
 hr {
@@ -62,31 +62,144 @@ em {
   right: 0;
 }
 
-header {
+header,
+footer {
+  z-index: 101;
   position: fixed;
-  top: 0;
   left: 0;
   right: 0;
   height: 45px;
   line-height: 45px;
+  background: rgba(0,0,0,.7);
+  overflow: hidden;
+  @include transition(height .2s linear);
+}
+
+.h-f-close {
+  height: 0;
+}
+
+header {
+  top: 0;
   text-align: center;
   color: #fff;
-  background: #000;
   h2 {
     line-height: 45px;
     font-size: 1.8rem;
   }
+  a {
+    color: #fff;
+  }
+  .pl {
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    line-height: 1em;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+  .pr {
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    line-height: 1em;
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
 }
 
 footer {
-  position: fixed;
   bottom: 0;
-  height: 45px;
+  font-size: 1.4rem;
   color: #fff;
-  background: #000;
+  nav {
+    @include table-equal(a);
+    a {
+      text-align: center;
+    }
+  }
 }
 
 .page {
-  padding: 45px 0;
-  background: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.loader {
+  z-index: -1;
+  position: absolute;
+  top: 45%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.qzy-catalog {
+  z-index: 102;
+  display: none;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.7);
+  overflow: auto;
+  &:target {
+    display: block;
+  }
+}
+
+.qzy-catalog-nav {
+  padding: 10px;
+  a {
+    display: block;
+    line-height: 3em;
+    font-size: 1.2rem;
+    border-bottom: 1px solid $grayBorder;
+  }
+}
+
+.qzy-tree-sub {
+  margin-left: 20px;
+}
+
+.qzy-content {
+  height: 100%;
+  .qzy-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    img {
+      position: relative;
+      top: 50%;
+      max-width: 100%;
+      max-height: 100%;
+      @include translateY(-50%);
+    }
+  }
+}
+
+.page-out {
+  z-index: 99;
+  @include transition(all .5s ease-out);
+  @include translateX(-100%);
+}
+
+.page-in {
+  z-index: 99;
+  @include transition(all .5s ease-out);
+  @include translateX(0);
+}
+
+.page-off {
+  @include translateX(-100%);
+}
+
+.page-on {
+  z-index: 100;
 }

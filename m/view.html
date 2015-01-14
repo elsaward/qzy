@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telphone=no, email=no">
+    <meta name="msapplication-tap-highlight" content="no">
     <title>浏览页面</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -10,14 +12,30 @@
 <!-- 政委专用，椰子爱政委么么哒 -->
 <header>
     <h2>千载弦歌</h2>
+    <a class="pl" rel="back">返回</a>
+    <a class="pr" href="#catalog">目录</a>
 </header>
 <section class="page">
-    <img src="data/test1.jpg" width="100%">
+    <div class="qzy-content">
+        <div class="qzy-page"></div>
+        <div class="qzy-page"></div>
+    </div>
+    <div class="loader">loading...</div>
 </section>
 <footer>
-    <a>上一页</a>
-    <a>下一页</a>
+    <nav class="qzy-page-bar">
+        <a href="#" data-page="0">上一页</a>
+        <a href="#" data-page="0">下一页</a>
+    </nav>
 </footer>
-<!--<script data-main="scripts/catList" src="../scripts/require.js"></script>-->
+<div id="catalog" class="qzy-catalog">
+    <div class="qzy-catalog-nav">
+        <div id="catList"></div>
+    </div>
+</div>
+<script id="imgTpl" type="text/html">
+    <img src='{{data}}'>
+</script>
+<script data-main="scripts/catList" src="../scripts/require.js"></script>
 </body>
 </html>
