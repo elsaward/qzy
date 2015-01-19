@@ -39,6 +39,7 @@ table {
 }
 
 img {
+  vertical-align: middle;
   border: 0;
   @include border-box;
 }
@@ -116,6 +117,141 @@ a {
   @extend %cf;
 }
 
+.qzy-center {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.qzy-index-wrap {
+  min-width: 1200px;
+}
+
+/* header */
+.qzy-header {
+  height: 150px;
+  border-bottom: 7px solid #58381b;
+}
+
+.qzy-header.fixed {
+  height: 80px;
+  border-bottom: 4px solid #58381b;
+}
+
+.top-logo {
+  float: left;
+  padding-top: 14px;
+}
+
+.top-nav {
+  float: right;
+  padding-top: 46px;
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, SimHei, Arial, sans-serif;
+  a {
+    display: inline-block;
+    padding: 40px 34px;
+    line-height: 100%;
+    font-size: 24px;
+    color: #58381b;
+  }
+}
+
+.qzy-top-banner {
+  border-bottom: 7px solid #58381b;
+}
+
+.qzy-top-slide {
+  img {
+    width: 100%;
+  }
+}
+
+.qzy-index-main {
+  margin-top: 40px;
+  height: 1000px;  //test
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "微软雅黑";
+  color: #58381b;
+  background: url("../images/index-bk.jpg") no-repeat bottom;
+  background-size: 100% auto;
+  a {
+    color: #58381b;
+  }
+}
+
+.main-divide {
+  margin-bottom: 80px;
+  width: 100%;
+  line-height: 100%;
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-align: center;
+  overflow: hidden;
+  >div {
+    display: inline-block;
+    position: relative;
+    &:before {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 50%;
+      height: 2px;
+      background: #58381b;
+      content: " ";
+      @include translateX(-110%);
+    }
+    &:after {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      width: 50%;
+      height: 2px;
+      background: #58381b;
+      content: " ";
+      @include translateX(110%);
+    }
+  }
+}
+
+.main-row {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  >div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &:nth-child(odd) {
+    >div {
+      &:first-child {
+        width: 30%;
+        text-align: center;
+      }
+      &:last-child {
+        width: 70%;
+        text-align: left;
+      }
+    }
+  }
+  &:nth-child(even) {
+    >div{
+      &:first-child {
+        width: 70%;
+        text-align: right;
+      }
+      &:last-child {
+        width: 30%;
+        text-align: center;
+      }
+    }
+  }
+  nav {
+    display: inline-block;
+    >a {
+      display: block;
+      line-height: 30px;
+    }
+  }
+}
+
 /* font */
 @for $i from 6 through 11 {
   .qzy-text-#{2 * $i} {
@@ -138,9 +274,6 @@ a {
 }
 
 /* box */
-.qzy-center {
-  margin: 0 auto;
-}
 
 @for $i from 1 through 6 {
   .qzy-margin-top-#{5 * $i} {
@@ -166,7 +299,7 @@ a {
   }
 }
 
-@for $i from 1 through 10 {
+@for $i from 2 through 10 {
   @for $j from 1 through $i - 1 {
     .qzy-width-#{$j}-#{$i} {
       width: $j / $i * 100% !important;
